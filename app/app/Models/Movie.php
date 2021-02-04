@@ -19,6 +19,7 @@ class Movie extends Model
         'movie',
     ];
 
+
     public function reviews()
     {
         return $this->hasMany(Review::class);
