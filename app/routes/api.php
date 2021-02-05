@@ -2,6 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MovieController;
+use App\Http\Controllers\ReviewController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,30 +18,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 // create
-Route::post('/insertUser','userController@create');
-Route::post('/createMovie','movieController@create');
-Route::post('/createReview','reviewController@create');
+Route::post('/insertUser',[UserController::class, 'create']);
+Route::post('/createMovie',[MovieController::class, 'create']);
+Route::post('/createReview',[ReviewController::class, 'create']);
 
 //delete
-Route::delete('/deleteUser','userController@delete');
-Route::delete('/deleteMovie','movieController@delete');
-Route::delete('/deleteReview','reviewController@delete');
+Route::delete('/deleteUser',[UserController::class, 'delete']);
+Route::delete('/deleteMovie',[MovieController::class, 'delete']);
+Route::delete('/deleteReview',[ReviewController::class, 'delete']);
 
 // get and get all
-Route::get('/getUser','userController@get');
-Route::get('/listUsers','userController@list');
+Route::get('/getUser',[UserController::class, 'get']);
+Route::get('/listUsers',[UserController::class, 'list']);
 
-Route::get('/getMovie','movieController@get');
-Route::get('/listMovie','movieController@list');
+Route::get('/getMovie',[MovieController::class, 'get']);
+Route::get('/listMovies',[MovieController::class, 'list']);
 
-Route::get('/getReview','reviewController@get');
-Route::get('/listReview','reviewController@list');
+Route::get('/getReview',[ReviewController::class, 'get']);
+Route::get('/listReviews',[ReviewController::class, 'list']);
+
+
 
 //Get Average rating of movie
 
 //Get Average rating of user
+
