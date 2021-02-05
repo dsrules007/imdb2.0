@@ -24,7 +24,7 @@ class userRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => 'size:10'
+            'username' => 'size:20'
         ];
     }
 }

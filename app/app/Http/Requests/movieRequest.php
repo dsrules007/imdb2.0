@@ -24,7 +24,7 @@ class movieRequest extends FormRequest
     public function rules()
     {
         return [
-            'movie' => 'size:255'
+            'movie' => 'size:255|required'
         ];
     }
 }
