@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\userRequest;
+
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -24,7 +26,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function create(userRequest $request)
+    public function create(Request $request)
     {
         $user = User::create($request->all());
 

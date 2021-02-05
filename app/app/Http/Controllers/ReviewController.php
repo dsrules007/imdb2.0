@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\reviewRequest;
+use Illuminate\Http\Request;
 use App\Models\Movie;
 use App\Models\Review;
 
@@ -33,7 +34,7 @@ class ReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function create(reviewRequest $request)
+    public function create(Request $request)
     {
         $review = Review::create($request->all());
 
