@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MovieController;
@@ -19,7 +18,7 @@ use App\Http\Controllers\ReviewController;
 */
 
 // create
-Route::post('/insertUser',[UserController::class, 'create']);
+Route::post('/createUser',[UserController::class, 'create']);
 Route::post('/createMovie',[MovieController::class, 'create']);
 Route::post('/createReview',[ReviewController::class, 'create']);
 
